@@ -1,0 +1,247 @@
+\documentclass[11pt]{article}
+
+% Paquetes
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{tabularx}
+\usepackage{array}
+
+% Información del documento
+\title{Documentación del Proyecto CalificaUPV}
+\author{Ricardo E. Uriegas Ibarra - 2230122}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Descripción General}
+
+\textbf{Objetivo:} \\
+Desarrollar una aplicación web en la que los alumnos de la UPV puedan calificar de forma anónima a sus profesores, utilizando una escala de 1 a 5 estrellas. La aplicación permitirá recopilar las calificaciones para generar estadísticas y ayudar a mejorar la calidad de la enseñanza.
+
+\bigskip
+\textbf{Público objetivo:} \\
+Estudiantes de la UPV que deseen expresar su opinión sobre la labor de sus profesores de manera anónima.
+
+\section{Pantallas (Wireframes/Mockups)}
+
+Debido a la naturaleza del proyecto, se han definido las siguientes pantallas:
+
+\subsection{Pantalla de Inicio}
+\begin{itemize}
+    \item Breve introducción al funcionamiento de la aplicación.
+    \item Acceso a la sección de calificaciones sin necesidad de registro (la identidad permanece anónima).
+\end{itemize}
+
+\subsection{Pantalla de Listado de Profesores}
+\begin{itemize}
+    \item Visualización de una lista de profesores disponibles para calificar.
+    \item Filtros de búsqueda (por departamento, nombre, etc.).
+\end{itemize}
+
+\subsection{Pantalla de Detalle y Calificación del Profesor}
+\begin{itemize}
+    \item Información básica del profesor (nombre, departamento, foto, etc.).
+    \item Sistema de calificación: opción para seleccionar entre 1 y 5 estrellas.
+    \item Opción para dejar un comentario opcional.
+    \item Botón para enviar la calificación.
+\end{itemize}
+
+\subsection{Pantalla de Estadísticas y Resultados}
+\begin{itemize}
+    \item Visualización de la calificación promedio de cada profesor.
+    \item Gráficos o tablas que muestren la distribución de las calificaciones.
+\end{itemize}
+
+\subsection{Pantalla de Ayuda/Soporte}
+\begin{itemize}
+    \item Información sobre el uso de la plataforma.
+    \item Preguntas frecuentes y contacto para soporte.
+\end{itemize}
+
+\section{Recursos Funcionales y No Funcionales}
+
+\subsection{Requisitos Funcionales}
+\begin{itemize}
+    \item \textbf{Calificación Anónima:}
+    \begin{itemize}
+        \item Permitir a los alumnos calificar a los profesores sin identificar al usuario.
+        \item La calificación debe ser de 1 a 5 estrellas.
+    \end{itemize}
+    \item \textbf{Visualización de Profesores:}
+    \begin{itemize}
+        \item Mostrar un listado de profesores con opción de búsqueda y filtrado.
+    \end{itemize}
+    \item \textbf{Detalle del Profesor y Calificación:}
+    \begin{itemize}
+        \item Permitir ver la información básica del profesor y enviar una calificación.
+        \item Posibilidad de dejar un comentario opcional.
+    \end{itemize}
+    \item \textbf{Estadísticas:}
+    \begin{itemize}
+        \item Calcular y mostrar la calificación promedio y la distribución de las calificaciones.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Requisitos No Funcionales}
+\begin{itemize}
+    \item \textbf{Seguridad y Privacidad:}
+    \begin{itemize}
+        \item Garantizar el anonimato de los alumnos al realizar las calificaciones.
+        \item Proteger la integridad de los datos.
+    \end{itemize}
+    \item \textbf{Usabilidad:}
+    \begin{itemize}
+        \item Interfaz sencilla e intuitiva.
+        \item Diseño responsivo para uso en dispositivos móviles y de escritorio.
+    \end{itemize}
+    \item \textbf{Rendimiento:}
+    \begin{itemize}
+        \item Respuesta rápida en la carga de profesores y envío de calificaciones.
+    \end{itemize}
+    \item \textbf{Mantenibilidad:}
+    \begin{itemize}
+        \item Código modular y bien documentado para facilitar futuras actualizaciones.
+    \end{itemize}
+\end{itemize}
+
+\section{Documentación Técnica}
+
+\subsection{Arquitectura del Sistema}
+\begin{itemize}
+    \item \textbf{Frontend:}
+    \begin{itemize}
+        \item Aplicación web desarrollada con tecnologías modernas (por ejemplo, React.js, Angular o Vue.js).
+    \end{itemize}
+    \item \textbf{Backend:}
+    \begin{itemize}
+        \item API REST para gestionar la obtención de la lista de profesores, envío de calificaciones y consulta de estadísticas.
+        \item Tecnologías sugeridas: \texttt{Node.js}, \texttt{Django} o \texttt{Flask}.
+    \end{itemize}
+    \item \textbf{Base de Datos:}
+    \begin{itemize}
+        \item Sistema relacional (MySQL, PostgreSQL) para almacenar la información de los profesores y las calificaciones.
+    \end{itemize}
+    \item \textbf{Servicios Adicionales:}
+    \begin{itemize}
+        \item Integración de herramientas para visualización de datos (por ejemplo, Chart.js o D3.js) en la sección de estadísticas.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Casos de Uso Principales}
+\begin{itemize}
+    \item \textbf{CU1 – Visualización de Profesores:}
+    \begin{itemize}
+        \item \textbf{Actor:} Alumno.
+        \item \textbf{Flujo:} El alumno accede a la lista de profesores, utiliza filtros y selecciona un profesor para ver su detalle.
+    \end{itemize}
+    \item \textbf{CU2 – Calificación de un Profesor:}
+    \begin{itemize}
+        \item \textbf{Actor:} Alumno.
+        \item \textbf{Flujo:} Desde el detalle del profesor, el alumno selecciona una calificación (1-5 estrellas), puede agregar un comentario opcional y envía la calificación de manera anónima.
+    \end{itemize}
+    \item \textbf{CU3 – Visualización de Estadísticas:}
+    \begin{itemize}
+        \item \textbf{Actor:} Cualquier usuario.
+        \item \textbf{Flujo:} El usuario consulta las calificaciones promedio y la distribución de las calificaciones de cada profesor.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Especificación de APIs}
+\begin{itemize}
+    \item \textbf{Endpoint de Profesores:} \texttt{/api/profesores} (GET para obtener la lista y detalle de profesores).
+    \item \textbf{Endpoint de Calificaciones:} \texttt{/api/calificaciones} (POST para enviar una nueva calificación, GET para consultar estadísticas).
+\end{itemize}
+
+\subsection{Manual de Instalación y Despliegue}
+\textbf{Requisitos Previos:}
+\begin{itemize}
+    \item Servidores configurados (por ejemplo, AWS, Heroku, etc.).
+    \item Variables de entorno para conexión a la base de datos y otros servicios.
+\end{itemize}
+\textbf{Pasos:}
+\begin{enumerate}
+    \item Clonar el repositorio del proyecto.
+    \item Instalar las dependencias necesarias (por ejemplo, mediante \texttt{npm} o \texttt{pip}).
+    \item Configurar las variables de entorno.
+    \item Ejecutar las migraciones de la base de datos y los seeds si es necesario.
+    \item Desplegar el backend y el frontend.
+\end{enumerate}
+
+\subsection{Pruebas y Calidad}
+\begin{itemize}
+    \item \textbf{Pruebas Unitarias y de Integración:}
+    \begin{itemize}
+        \item Cobertura de las funcionalidades críticas (envío de calificaciones, obtención de estadísticas).
+    \end{itemize}
+    \item \textbf{Pruebas de Usabilidad:}
+    \begin{itemize}
+        \item Testeo con alumnos de la UPV para asegurar la correcta comprensión y uso de la interfaz.
+    \end{itemize}
+    \item \textbf{Pruebas de Seguridad:}
+    \begin{itemize}
+        \item Verificar el anonimato en el envío de calificaciones y la integridad de los datos.
+    \end{itemize}
+\end{itemize}
+
+\section{Cronograma del Proyecto}
+
+A continuación se muestra un ejemplo de cronograma estimado (la duración puede variar según el equipo y alcance):
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lp{3cm}X@{}}
+\toprule
+\textbf{Fase} & \textbf{Duración Estimada} & \textbf{Actividades Clave} \\ \midrule
+Análisis y Requerimientos & 1 semana & Reunión inicial, definición de requisitos y alcance. \\
+Diseño UI/UX & 2 semanas & Diseño de wireframes, prototipos y validación con usuarios. \\
+Desarrollo Frontend & 3 semanas & Implementación de la interfaz, listado de profesores y pantalla de calificación. \\
+Desarrollo Backend \& API & 3 semanas & Creación de endpoints para profesores y calificaciones, integración con la base de datos. \\
+Integración y Testing & 2 semanas & Pruebas unitarias, de integración y ajustes en el flujo de navegación. \\
+Despliegue y Puesta en Producción & 1 semana & Configuración de servidores, despliegue y monitoreo. \\
+Documentación y Capacitación & 1 semana & Elaboración de manuales y capacitación a administradores. \\ \bottomrule
+\end{tabularx}
+\end{center}
+
+\noindent \textbf{Total estimado:} 13 -- 14 semanas.
+
+\section{Diseño de la Base de Datos}
+
+A continuación se presenta un diseño relacional que incluye las siguientes tablas:
+
+\subsection{Tabla \texttt{Profesores}}
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}p{4cm}p{3cm}X@{}}
+\toprule
+\textbf{Campo} & \textbf{Tipo de Dato} & \textbf{Descripción} \\ \midrule
+id\_profesor   & INT (PK, AutoInc)  & Identificador único del profesor \\
+nombre         & VARCHAR(100)       & Nombre del profesor \\
+departamento   & VARCHAR(100)       & Departamento o área de enseñanza \\
+foto           & VARCHAR(255)       & URL de la foto del profesor \\ \bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection{Tabla \texttt{Calificaciones}}
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}p{4cm}p{3cm}X@{}}
+\toprule
+\textbf{Campo} & \textbf{Tipo de Dato} & \textbf{Descripción} \\ \midrule
+id\_calificacion & INT (PK, AutoInc) & Identificador único de la calificación \\
+id\_profesor   & INT (FK)           & Referencia al profesor (\texttt{Profesores.id\_profesor}) \\
+estrellas      & INT                & Calificación en estrellas (1-5) \\
+comentario     & TEXT               & Comentario opcional \\
+fecha          & TIMESTAMP          & Fecha y hora de la calificación \\ \bottomrule
+\end{tabularx}
+\end{center}
+
+\end{document}
