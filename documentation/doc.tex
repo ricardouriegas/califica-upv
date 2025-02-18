@@ -15,8 +15,8 @@
 \usepackage{array}
 
 % Información del documento
-\title{Documentación del Proyecto CalificaUPV}
-\author{Ricardo E. Uriegas Ibarra - 2230122}
+\title{Documentación del Proyecto UPINION}
+\author{Ricardo Emmanuel Uriegas Ibarra - 2230122 \\ Angel Ivan Cabrera Rojas - 2230343 \\ Alexis Guadalupe Medina Ayala - 2130234}
 \date{\today}
 
 \begin{document}
@@ -34,6 +34,70 @@ Desarrollar una aplicación web en la que los alumnos de la UPV puedan calificar
 \textbf{Público objetivo:} \\
 Estudiantes de la UPV que deseen expresar su opinión sobre la labor de sus profesores de manera anónima.
 
+\newpage
+\section{Visión del Proyecto}
+
+El proyecto \textbf{CalificaProf-UPV} tiene como objetivo principal crear una plataforma web en la que los alumnos de la UPV puedan expresar su opinión sobre la labor de sus profesores de manera anónima. La visión del proyecto es la siguiente:
+
+\begin{itemize}
+    \item \textbf{Transparencia y Mejora Continua:} Facilitar un medio para que los estudiantes proporcionen feedback honesto y constructivo, permitiendo a la institución y a los profesores conocer áreas de oportunidad y fortalezas en la enseñanza.
+    \item \textbf{Accesibilidad y Usabilidad:} Ofrecer una interfaz intuitiva y responsiva, que permita a los usuarios acceder y utilizar la aplicación desde cualquier dispositivo, sin complicaciones.
+    \item \textbf{Análisis de Datos:} Recopilar y analizar las calificaciones y comentarios para generar estadísticas y reportes que sirvan de base para la toma de decisiones en la mejora de la calidad educativa.
+    \item \textbf{Privacidad y Seguridad:} Garantizar el anonimato de los estudiantes al momento de calificar, protegiendo la integridad de los datos y promoviendo un ambiente seguro y confiable.
+\end{itemize}
+
+\newpage
+\section{Requisitos del Usuario}
+
+Para que la aplicación cumpla con las expectativas de sus usuarios, se han identificado los siguientes requisitos:
+
+\subsection*{Requisitos Funcionales}
+\begin{itemize}
+    \item Permitir a los alumnos ver el listado completo de profesores.
+    \item Facilitar el acceso a la información básica de cada profesor (nombre, departamento, foto).
+    \item Proveer una interfaz para calificar a cada profesor utilizando una escala de 1 a 5 estrellas.
+    \item Permitir la opción de agregar un comentario de manera opcional junto a la calificación.
+    \item Mostrar estadísticas agregadas de las calificaciones (calificación promedio, número total de evaluaciones, etc.).
+\end{itemize}
+
+\subsection*{Requisitos No Funcionales}
+\begin{itemize}
+    \item La aplicación debe ser fácil de usar y accesible desde dispositivos móviles y de escritorio.
+    \item Garantizar el anonimato de las calificaciones, de forma que ningún alumno pueda ser identificado.
+    \item La plataforma debe responder de manera rápida ante las interacciones del usuario.
+    \item El diseño debe ser claro y amigable, promoviendo una experiencia de usuario satisfactoria.
+\end{itemize}
+
+\newpage
+\section{Análisis de Visibilidad}
+
+El análisis de visibilidad tiene como objetivo definir quiénes son los stakeholders del proyecto y cómo se visualizarán los resultados de las evaluaciones en la plataforma. Se destacan los siguientes aspectos:
+
+\begin{itemize}
+    \item \textbf{Usuarios Directos:} 
+    \begin{itemize}
+        \item \textbf{Estudiantes:} Utilizarán la plataforma para calificar de forma anónima a sus profesores y conocerán las estadísticas generales de las calificaciones.
+        \item \textbf{Administradores:} Supervisarán el correcto funcionamiento de la plataforma, gestionarán reportes y garantizarán la integridad de los datos.
+    \end{itemize}
+    \item \textbf{Resultados Públicos:} 
+    \begin{itemize}
+        \item Se mostrará un panel de estadísticas donde se visualizará la calificación promedio de cada profesor, junto con la distribución de las evaluaciones.
+        \item La visibilidad de los datos se limitará a información agregada, manteniendo el anonimato de las evaluaciones individuales.
+    \end{itemize}
+    \item \textbf{Accesibilidad de la Información:} 
+    \begin{itemize}
+        \item La plataforma dispondrá de un diseño responsivo, asegurando que la información sea fácilmente visible y navegable en distintos dispositivos.
+        \item Se implementarán filtros y opciones de búsqueda para facilitar a los usuarios la consulta de la información deseada.
+    \end{itemize}
+    \item \textbf{Confidencialidad y Seguridad:} 
+    \begin{itemize}
+        \item Se aplicarán mecanismos de seguridad para proteger los datos y garantizar el anonimato de los usuarios.
+        \item El acceso a información sensible se restringirá a los administradores mediante autenticación y control de accesos.
+    \end{itemize}
+\end{itemize}
+
+
+\newpage
 \section{Pantallas (Wireframes/Mockups)}
 
 Debido a la naturaleza del proyecto, se han definido las siguientes pantallas:
@@ -70,6 +134,7 @@ Debido a la naturaleza del proyecto, se han definido las siguientes pantallas:
     \item Preguntas frecuentes y contacto para soporte.
 \end{itemize}
 
+\newpage
 \section{Recursos Funcionales y No Funcionales}
 
 \subsection{Requisitos Funcionales}
@@ -116,6 +181,7 @@ Debido a la naturaleza del proyecto, se han definido las siguientes pantallas:
     \end{itemize}
 \end{itemize}
 
+\newpage
 \section{Documentación Técnica}
 
 \subsection{Arquitectura del Sistema}
@@ -195,6 +261,7 @@ Debido a la naturaleza del proyecto, se han definido las siguientes pantallas:
     \end{itemize}
 \end{itemize}
 
+\newpage
 \section{Cronograma del Proyecto}
 
 A continuación se muestra un ejemplo de cronograma estimado (la duración puede variar según el equipo y alcance):
@@ -215,6 +282,7 @@ Documentación y Capacitación & 1 semana & Elaboración de manuales y capacitac
 
 \noindent \textbf{Total estimado:} 13 -- 14 semanas.
 
+\newpage
 \section{Diseño de la Base de Datos}
 
 A continuación se presenta un diseño relacional que incluye las siguientes tablas:
@@ -243,5 +311,66 @@ comentario     & TEXT               & Comentario opcional \\
 fecha          & TIMESTAMP          & Fecha y hora de la calificación \\ \bottomrule
 \end{tabularx}
 \end{center}
+
+% bd.png
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{BD.png}
+    \caption{Diseño de la Base de Datos}
+\end{figure}
+
+\newpage
+\section{Estimación de Costos y Tiempos}
+
+A continuación se presenta una estimación preliminar de los costos y tiempos necesarios para el desarrollo del proyecto \textbf{CalificaProf-UPV}. Estos valores son aproximados y podrán ajustarse conforme se defina el alcance final del proyecto.
+
+\subsection{Estimación de Costos}
+
+La siguiente tabla resume la estimación de horas y costos por cada fase del proyecto:
+
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Fase} & \textbf{Horas Estimadas} & \textbf{Costo por Hora (USD)} & \textbf{Costo Total (USD)} \\
+\midrule
+Análisis y Requerimientos       & 40  & \$25 & \$1,000 \\
+Diseño UI/UX                   & 80  & \$30 & \$2,400 \\
+Desarrollo Frontend            & 120 & \$35 & \$4,200 \\
+Desarrollo Backend             & 120 & \$35 & \$4,200 \\
+Integración y Testing          & 80  & \$30 & \$2,400 \\
+Despliegue                     & 40  & \$25 & \$1,000 \\
+Documentación y Capacitación   & 40  & \$25 & \$1,000 \\
+\midrule
+\textbf{Total}                 & 520 & ---  & \$16,200 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Estimación de Tiempos}
+
+La siguiente tabla muestra la duración estimada de cada fase en semanas, considerando que algunas fases se realizan de manera secuencial:
+
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Fase} & \textbf{Duración Estimada (semanas)} & \textbf{Notas} \\
+\midrule
+Análisis y Requerimientos       & 1 & \\
+Diseño UI/UX                   & 2 & \\
+Desarrollo Frontend            & 3 & \\
+Desarrollo Backend             & 3 & \\
+Integración y Testing          & 2 & \\
+Despliegue                     & 1 & \\
+Documentación y Capacitación   & 1 & \\
+\midrule
+\textbf{Total}                 & 13 & Duración total estimada \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\bigskip
+\textbf{Observaciones:} \\
+Las estimaciones presentadas son preliminares y están sujetas a revisión conforme se avance en la definición de requisitos, alcance y asignación de recursos. Los costos totales pueden variar en función de cambios en la planificación o en el equipo de trabajo.
+
 
 \end{document}
